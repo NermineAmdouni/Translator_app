@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="translator-container">
+    <!-- Translation Header -->
+    <div class="translation-header">
+        <div>
+            <h4 class="mb-0">🌐 Live Translator</h4>
+            <small class="opacity-75">Real-time speech translation</small>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+            <select id="languageSelect" class="language-selector">
+                {% for code, lang in languages.items() %}
+                <option value="{{ code }}" {% if code == current_lang %}selected{% endif %}>
+                    {{ lang['name'] }}
+                </option>
+                {% endfor %}
+            </select>
+            <div class="status-indicator ready" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span id="statusText">Ready</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Translation Content -->
+    <div class="translation-content" id="translationContent">
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-language"></i>
+            <h5>Start translating</h5>
+            <p>Press the microphone button and speak in any language.<br>I'll detect it automatically and translate to your chosen language.</p>
+        </div>
+
+        <div class="translation-cards" id="translationCards" style="display: none;">
+            <div class="translation-card source-card">
+                <div class="card-header">
+                    <div class="language-info">
+                        <span class="language-flag">🎤</span>
+                        <div>
+                            <div class="language-name" id="sourceLanguageName">Detected Language</div>
+                            <div class="language-status">Listening...</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-content" id="originalText">
+                        <div class="placeholder-text">Your speech will appear here...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="translation-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="translation-card target-card">
+                <div class="card-header">
+                    <div class="language-info">
+                        <span class="language-flag">🔊</span>
+                        <div>
+                            <div class="language-name" id="targetLanguageName">{{ languages[current_lang]['name'] }}</div>
+                            <div class="language-status">Translation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="text-content" id="translatedText">
+                        <div class="placeholder-text">Translation will appear here...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Translation Controls -->
+    <div class="translation-controls">
+        <button id="startBtn" class="voice-button start" title="Start translation">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button id="pauseBtn" class="voice-button pause" style="display: none;" title="Pause translation">
+            <i class="fas fa-pause"></i>
+        </button>
+        <span id="pauseStatus" class="pause-status" style="display: none; margin-left: 1rem; font-weight: bold; color: orange;">
+            ⏸️ Paused
+        </span>
+    </div>
+</div>
+
+<!-- External JS -->
+<script src="{{ url_for('static', filename='js/translator.js') }}"></script>
+{% endblock %}

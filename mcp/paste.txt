@@ -1,0 +1,49 @@
+class ContextAwareTranslator:
+    """Enhanced translator that uses conversation context for better translations."""
+    
+    def __init__(self, base_translator, languages: Dict, target_lang: str):
+        """
+        Initialize context-aware translator.
+        
+        Args:
+            base_translator: The base translator instance
+            languages: Dictionary of supported languages
+            target_lang: Current target language code
+        """
+        self.base_translator = base_translator
+        self.languages = languages
+        self.target_lang = target_lang
+        
+    def translate_with_context(self, text: str, source_lang: str, context: str = "") -> str:
+        """
+        Translate text using conversation context.
+        
+        Args:
+            text: Text to translate
+            source_lang: Source language code
+            context: Conversation context string
+            
+        Returns:
+            str: Translated text
+        """
+        if not context:
+            return self.base_translator.translate(text, source_lang)
+        
+        # Enhanced translation with context
+        # For now, we'll use the base translator but could integrate with
+        # more sophisticated models that accept context
+        
+        # Simple context-aware translation approach:
+        # 1. Use base translation
+        base_translation = self.base_translator.translate(text, source_lang)
+        
+        # 2. Could add context refinement logic here
+        # For example, checking for consistency with previous translations
+        # or using the context to disambiguate meanings
+        
+        return base_translation
+    
+    def update_target_language(self, new_target: str):
+        """Update target language."""
+        self.target_lang = new_target
+        self.base_translator.update_target_language(new_target)

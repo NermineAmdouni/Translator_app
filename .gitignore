@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+# VSCode settings (if using)
+.vscode/
+# Log, cache, temp files
+*.log
+*.tmp
+*.cache
+*.bak
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="chatbot-container mt-4">
+    <!-- Chat Header -->
+    <div class="chat-header">
+        <div>
+            <h4 class="mb-0">🎤 CallBot</h4>
+            <small class="opacity-75">Ask and I'll answer</small>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+           <!--  <select id="chatbotLanguageSelect" class="language-selector">
+                {% for code, lang in languages.items() %}
+                <option value="{{ code }}" {% if code == current_lang %}selected{% endif %}>
+                    {{ lang['name'] }}
+                </option>
+                {% endfor %}
+            </select> -->
+            <div class="status-indicator ready" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span id="statusText">Ready</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-microphone"></i>
+            <h5>Start a conversation</h5>
+            <p>Press the microphone button and start speaking.<br>I'll listen and respond in your chosen language.</p>
+        </div>
+    </div>
+    
+    <!-- Chat Controls -->
+    <div class="chat-controls">
+        <button id="startChatbotBtn" class="voice-button start" title="Start listening">
+            <i class="fas fa-microphone"></i>
+        </button>
+        <button id="stopChatbotBtn" class="voice-button stop" style="display: none;" title="Stop listening">
+            <i class="fas fa-stop"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const startBtn = document.getElementById('startChatbotBtn');
+    const stopBtn = document.getElementById('stopChatbotBtn');
+    const languageSelect = document.getElementById('chatbotLanguageSelect');
+    const statusIndicator = document.getElementById('statusIndicator');
+    const statusText = document.getElementById('statusText');
+    const chatMessages = document.getElementById('chatMessages');
+    const emptyState = document.getElementById('emptyState');
+    
+    let isListening = false;
+    let currentLanguage = '{{ current_lang }}';
+    
+    function updateStatus(status, text) {
+        statusIndicator.className = `status-indicator ${status}`;
+        statusText.textContent = text;
+    }
+    
+    function addMessage(content, isUser = false, timestamp = null) {
+        if (emptyState) {
+            emptyState.style.display = 'none';
+        }
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        
+        const time = timestamp || new Date().toLocaleTimeString('en-US', { 
+            hour: '2-digit', 
+            minute: '2-digit' 
+        });
+        
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                ${isUser ? 'You' : 'AI'}
+            </div>
+            <div>
+                <div class="message-content">${content}</div>
+                <div class="message-time">${time}</div>
+            </div>
+        `;
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function addTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot';
+        typingDiv.id = 'typingIndicator';
+        typingDiv.innerHTML = `
+            <div class="message-avatar">AI</div>
+            <div class="message-content typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function removeTypingIndicator() {
+        const typingIndicator = document.getElementById('typingIndicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    }
+    
+    startBtn.addEventListener('click', function() {
+        fetch('/start_chatbot', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                language: currentLanguage
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'started') {
+                isListening = true;
+                startBtn.style.display = 'none';
+                stopBtn.style.display = 'flex';
+                stopBtn.classList.add('listening');
+                updateStatus('listening', 'Listening...');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            updateStatus('ready', 'Error starting');
+        });
+    });
+    
+    stopBtn.addEventListener('click', function() {
+        fetch('/stop_chatbot', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'stopped') {
+                isListening = false;
+                startBtn.style.display = 'flex';
+                stopBtn.style.display = 'none';
+                stopBtn.classList.remove('listening');
+                updateStatus('ready', 'Ready');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    
+    languageSelect.addEventListener('change', function() {
+        const newLanguage = this.value;
+        
+        fetch('/change_chatbot_language', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                language: newLanguage
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'language_changed') {
+                currentLanguage = newLanguage;
+                updateStatus('ready', 'Language changed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    
+    // Poll for chatbot status
+    function pollChatbotStatus() {
+        if (isListening) {
+            fetch('/get_chatbot_status')
+            .then(response => response.json())
+            .then(data => {
+                if (data.last_user_message && data.last_user_message !== window.lastUserMessage) {
+                    addMessage(data.last_user_message, true);
+                    window.lastUserMessage = data.last_user_message;
+                    addTypingIndicator();
+                    updateStatus('processing', 'Processing...');
+                }
+                
+                if (data.last_bot_response && data.last_bot_response !== window.lastBotResponse) {
+                    removeTypingIndicator();
+                    addMessage(data.last_bot_response, false);
+                    window.lastBotResponse = data.last_bot_response;
+                    updateStatus('listening', 'Listening...');
+                }
+            })
+            .catch(error => {
+                console.error('Error polling status:', error);
+            });
+        }
+    }
+    
+    // Poll every 500ms when listening
+    setInterval(pollChatbotStatus, 500);
+});
+</script>
+{% endblock %}
