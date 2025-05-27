@@ -2,18 +2,76 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyc
 
-# Virtual environment
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Virtual environments
 venv/
-.env/
-# VSCode settings (if using)
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VSCode settings
 .vscode/
-# Log, cache, temp files
-*.log
-*.tmp
-*.cache
-*.bak
-# OS generated files
+
+# macOS
 .DS_Store
-Thumbs.db
+
+# Pytest
+.cache/
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# Pipenv
+Pipfile.lock
+
+# Pydantic or FastAPI auto-generated files
+__pydantic_cache__/
+
+# Docker
+*.env
+.env.
+
+# Local .env files
+.env
