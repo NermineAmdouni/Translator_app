@@ -199,13 +199,13 @@ class TrilingualTranslator:
                     if self.sentence_buffer not in self.recent_translations and self.source_lang:
                         # Get conversation context from MCP
                         context = self.conversation_context.get_contextual_summary(
-                            self.sentence_buffer, self.source_lang
+                            minutes=10
                         )
                         
                         # Calculate topic relevance
-                        relevance_score = self.conversation_context.get_topic_relevance_score(
+                        """relevance_score = self.conversation_context.get_topic_relevance_score(
                             self.sentence_buffer
-                        )
+                        )"""
                         
                         # Translate with context
                         translation = self.translator.translate_with_context(
@@ -229,9 +229,9 @@ class TrilingualTranslator:
                                 self.recent_translations.pop()
                             
                             # Show context info if available
-                            if context:
+                            """if context:
                                 print(f"    💡 Using conversation context (relevance: {relevance_score:.2f})")
-                            
+                            """
                             # Show language pair frequency
                             pair_freq = self.conversation_context.get_language_pair_frequency(
                                 self.source_lang, self.target_lang

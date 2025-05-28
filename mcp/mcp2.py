@@ -3,6 +3,7 @@ import os
 from datetime import datetime, timedelta
 from collections import deque
 from typing import List, Dict
+import yake
 
 
 class ConversationContext:
@@ -59,22 +60,21 @@ class ConversationContext:
         # Accumulate original text for topic extraction
         self._topic_buffer.append(original_text)
 
-        # Perform topic extraction heuristic when buffer hits 50+ words
+        # Perform topic extraction when buffer hits 50+ words
         buffered_text = " ".join(self._topic_buffer)
         if len(buffered_text.split()) >= 50:
-            extracted_topics = self._extract_topics_fallback(buffered_text)
+            extracted_topics = self.extract_topics(buffered_text)
             self.topics.update(extracted_topics)
 
-            # Limit topics to last 50 if more than 100 (to avoid overgrowth)
+            # Limit topics to last 50 if more than 100 (avoid overgrowth)
             if len(self.topics) > 100:
                 self.topics = set(list(self.topics)[-50:])
 
             self._topic_buffer = []
 
-    def _extract_topics_fallback(self, text: str) -> List[str]:
+    def extract_topics(self, text: str) -> List[str]:
         """
-        Heuristic fallback topic extraction without YAKE.
-        Extracts keywords based on word frequency, length, capitalization, and filtering stopwords.
+        Extract keywords based on word frequency, length, capitalization, and filtering stopwords.
 
         Args:
             text: The text to extract topics from.
@@ -86,7 +86,7 @@ class ConversationContext:
             'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
             'of', 'with', 'by', 'is', 'are', 'was', 'were', 'have', 'has', 'had',
             'will', 'would', 'could', 'should', 'can', 'may', 'might', 'must',
-            'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it',
+            'this', 'that', 'these', 'those','the', 'i', 'you', 'he', 'she', 'it',
             'we', 'they', 'me', 'him', 'her', 'us', 'them', 'my', 'your',
             'his', 'her', 'its', 'our', 'their', 'am', 'be', 'been', 'being',
             'do', 'does', 'did', 'get', 'got', 'go', 'went', 'come', 'came'
@@ -115,7 +115,7 @@ class ConversationContext:
             score += freq * 2
 
             # Capitalization bonus (check if word capitalized in original text)
-            if any(w[0].isupper() for w in text.split() if w.lower().strip('.,!?;:"()[]{}') == word):
+            if any(w and w[0].isupper() for w in text.split() if w.lower().strip('.,!?;:"()[]{}') == word):
                 score += 3
 
             # Penalize common suffixes (less meaningful)
@@ -185,39 +185,59 @@ class ConversationContext:
             self.history = deque(data.get('history', []), maxlen=self.max_history)
             self.topics = set(data.get('topics', []))
             self.language_pairs = data.get('language_pairs', {})
+
     def get_contextual_summary(self, minutes: int = 10) -> str:
-            
         recent = self.get_recent_context(minutes)
         topics = self.get_top_topics(5)
-        summary = f"Recent conversation ({minutes} minutes):\n"
+        summary = f"Recent conversation (last {minutes} minutes):\n"
         for ex in recent:
             summary += f"- {ex['original']} ({ex['source_lang']}→{ex['target_lang']})\n"
         summary += f"\nTop topics: {', '.join(topics)}"
         return summary
 
     def get_top_topics(self, n: int = 5) -> List[str]:
-        """
-        Return the top N topics based on frequency in the conversation history.
-
-        Args:
-            n: Number of top topics to return.
-
-        Returns:
-            List of topic strings.
-        """
         if not self.topics:
             return []
 
-        # Count topic appearances in history
         topic_counts = {topic: 0 for topic in self.topics}
         for ex in self.history:
-            tokens = ex['tokens']
+            tokens = ex.get('tokens', [])
             for topic in self.topics:
                 if topic in tokens:
                     topic_counts[topic] += 1
 
         sorted_topics = sorted(topic_counts.items(), key=lambda x: x[1], reverse=True)
         return [topic for topic, _ in sorted_topics[:n]]
+    
+    def get_language_pair_frequency(self, source_lang: str, target_lang: str) -> int:
+        """Get frequency count for a specific language pair."""
+        pair = f"{source_lang}->{target_lang}"
+        return self.language_pairs.get(pair, 0)
+        
+    def get_conversation_stats(self) -> Dict:
+        """Get comprehensive conversation statistics."""
+        recent = self.get_recent_context()
+
+        # Define timestamp format (adjust if needed)
+        ts_format = "%Y-%m-%dT%H:%M:%S.%f"
+
+        if self.history:
+            timestamps = [datetime.strptime(ex['timestamp'], ts_format) for ex in self.history]
+            oldest = min(timestamps)
+            newest = max(timestamps)
+            time_span = newest - oldest
+        else:
+            time_span = timedelta(0)
+
+        return {
+            'total_exchanges': len(self.history),
+            'recent_exchanges': len(recent),
+            'total_topics': len(self.topics),
+            'topics': list(self.topics),
+            'language_pairs': self.language_pairs.copy(),
+            'conversation_span_minutes': int(time_span.total_seconds() / 60),
+            'context_window_minutes': int(self.context_window.total_seconds() / 60)
+        }
 
 class ContextAwareTranslator:
     """Enhanced translator that uses conversation context for better translations."""
