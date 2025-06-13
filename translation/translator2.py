@@ -4,19 +4,12 @@ import re
 from collections import deque
 from typing import Dict, Optional
 import time
+from llm_langchain.use_llm import clean_text
 
 class Translator:
-    """Translator with context management (no YAKE)"""
     
     def __init__(self, languages: Dict, target_lang: str, device: Optional[str] = None):
-        """
-        Initialize translator with language support.
-        
-        Args:
-            languages: Dictionary of supported languages and configurations
-            target_lang: Target language code (e.g., 'fr')
-            device: Hardware device ('cuda', 'mps', or None for auto)
-        """
+
         self.languages = languages
         self.target_lang = target_lang
         self.device = self._determine_device(device)
@@ -26,7 +19,8 @@ class Translator:
         self.last_translation_time = 0
         self.translation_count = 0
         self.total_translation_time = 0
-    
+
+
     def _determine_device(self, device: Optional[str]) -> str:
         """Auto-select the best available device."""
         if device:
@@ -34,39 +28,37 @@ class Translator:
         return 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
     
     def _load_translation_models(self):
-        """Load all required translation models."""
-        print("Loading translation models...")
-        for src_lang, lang_info in self.languages.items():
-            if src_lang != self.target_lang and self.target_lang in lang_info["translation_models"]:
-                model_name = lang_info["translation_models"][self.target_lang]
-                print(f"Loading {lang_info['name']} -> {self.languages[self.target_lang]['name']} model...")
+        """Load only the models needed for this translator's target language."""
+        print(f"Loading translation models for target language: {self.target_lang}")
+        
+        for src_lang, src_info in self.languages.items():
+            if src_lang == self.target_lang:
+                continue  # Skip same language
                 
-                try:
-                    tokenizer = MarianTokenizer.from_pretrained(model_name)
-                    model = MarianMTModel.from_pretrained(model_name).to(self.device)
-                    
-                    self.translation_models[src_lang] = {
-                        "model": model,
-                        "tokenizer": tokenizer
-                    }
+            model_name = src_info["translation_models"].get(self.target_lang)
+            if not model_name:
+                continue
+                
+            key = (src_lang, self.target_lang)
+            if key in self.translation_models:
+                continue  # Already loaded
+
+            print(f"Loading {src_info['name']} -> {self.languages[self.target_lang]['name']} model...")
+            try:
+                tokenizer = MarianTokenizer.from_pretrained(model_name)
+                model = MarianMTModel.from_pretrained(model_name).to(self.device)
+
+                self.translation_models[key] = {
+                    "model": model,
+                    "tokenizer": tokenizer
+                }
+
+                if src_lang not in self.context_history:
                     self.context_history[src_lang] = deque(maxlen=3)
-                    print(f"Model loaded on {self.device}")
-                except Exception as e:
-                    print(f"Failed to load model: {str(e)}")
-    
-    def update_target_language(self, new_target: str):
-        """Update target language and reload models."""
-        if new_target == self.target_lang:
-            return
-            
-        self.target_lang = new_target
-        
-        # Clear existing models to free memory
-        self.translation_models = {}
-        self.context_history = {}
-        
-        # Load new models
-        self._load_translation_models()
+
+                print(f"{src_lang}->{self.target_lang} loaded on {self.device}")
+            except Exception as e:
+                print(f"Failed to load model {src_lang}->{self.target_lang}: {str(e)}")
     
     def is_complete_sentence(self, text: str) -> bool:
         """
@@ -105,64 +97,89 @@ class Translator:
         text = re.sub(r'([.!?])\s*', r'\1 ', text)  # Fix spacing after punctuation
         return text
     
-    def translate(self, text: str, source_lang: str) -> Optional[str]:
-        """
-        Translate text with context management.
-        
-        Args:
-            text: Input text to translate
-            source_lang: Source language code
-            
-        Returns:
-            Translated text or None if translation fails
-        """
-        if not text or source_lang == self.target_lang:
-            return None
-        
-        if source_lang not in self.translation_models:
-            print(f"No model for {source_lang}->{self.target_lang}")
-            return None
-        
+
+    def translate(self, text: str, source_lang: Optional[str], target_lang: Optional[str] = None) -> Optional[str]:
+        target_lang = target_lang or self.target_lang
+        #source_lang= "en"
+        if not text:
+            return ""
+
+        # 🧠 Fallback to previous language if source_lang is None
+        if source_lang is None:
+            source_lang = getattr(self, "previous_source_lang", None)
+            if source_lang is None:
+                print("Source language is None and no previous language available.")
+                return ""
+        else:
+            # Update previous language only when current one is valid
+            self.previous_source_lang = source_lang
+
+        if source_lang == target_lang:
+            return text  # No translation needed
+
+        key = (source_lang, target_lang)
+        model_info = self.translation_models.get(key)
+        if not model_info:
+            print(f"No model for {source_lang}->{target_lang}")
+            return ""
+
         start_time = time.time()
         try:
-            # Clean input text
+            print(f"Original text: '{text}'")
+
             text = self._preprocess_text(text)
             if not text:
-                return None
-                
-            model_info = self.translation_models[source_lang]
+                return ""
+
             inputs = model_info["tokenizer"](
                 [text],
                 return_tensors="pt",
                 padding=True,
                 truncation=True,
                 max_length=512
-            ).to(self.device)
-            
-            # Generate translation
+            )
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+
+
             with torch.no_grad():
-                outputs = model_info["model"].generate(**inputs)
-            
-            translated = model_info["tokenizer"].batch_decode(
-                outputs, 
+                outputs = model_info["model"].generate(
+                    **inputs,
+                    max_length=128,
+                    num_beams=4,
+                    early_stopping=True
+                )
+
+
+            translated_list = model_info["tokenizer"].batch_decode(
+                outputs,
                 skip_special_tokens=True
-            )[0]
-            
-            # Update context if complete sentence
+            )
+
+            translated = translated_list[0] if translated_list else ""
+
+            print(f"Translated text before cleaning: '{translated}'")
+
+            translated = translated.strip()
+            print(f"Final translated text: '{translated}'")
+
+            if translated == "{}":
+                translated = ""
+
+
             if self.is_complete_sentence(text):
                 self.context_history[source_lang].append(text)
-            
-            # Track performance
+
             trans_time = time.time() - start_time
             self.last_translation_time = trans_time
             self.translation_count += 1
             self.total_translation_time += trans_time
-            
+
             return translated
-        
+
         except Exception as e:
             print(f"Translation error: {str(e)}")
-            return None
+            return ""
+
     
     def get_performance_stats(self) -> Dict:
         """Get translation performance metrics."""

@@ -1,450 +1,1916 @@
 {
   "history": [
     {
-      "timestamp": "2025-05-26T13:48:00.311848",
-      "original": "to be on this way.",
+      "timestamp": "2025-05-28T10:58:46.678742",
+      "original": "You've got chosen the way a chicken gets chosen for the stew pot.",
       "source_lang": "en",
-      "translated": "Pour \u00eatre sur ce chemin.",
-      "target_lang": "fr"
+      "translated": "Tu as choisi la fa\u00e7on dont un poulet est choisi pour le pot de rago\u00fbt.",
+      "target_lang": "fr",
+      "tokens": [
+        "you've",
+        "got",
+        "chosen",
+        "the",
+        "way",
+        "a",
+        "chicken",
+        "gets",
+        "chosen",
+        "for",
+        "the",
+        "stew",
+        "pot."
+      ]
     },
     {
-      "timestamp": "2025-05-26T14:45:54.603917",
-      "original": "It may be partly or entirely wrong",
+      "timestamp": "2025-05-28T10:59:03.755262",
+      "original": "about consultation Parade like a mask",
       "source_lang": "en",
-      "translated": "C'est peut-\u00eatre partiellement ou totalement faux.",
-      "target_lang": "fr"
+      "translated": "sur la consultation Parade comme un masque",
+      "target_lang": "fr",
+      "tokens": [
+        "about",
+        "consultation",
+        "parade",
+        "like",
+        "a",
+        "mask"
+      ]
     },
     {
-      "timestamp": "2025-05-26T14:46:05.793301",
-      "original": "We then try to think of ways to support or disprove those ideas. That last part is important.",
+      "timestamp": "2025-05-28T12:01:56.420671",
+      "original": "something to perform",
       "source_lang": "en",
-      "translated": "Nous essayons ensuite de trouver des moyens de soutenir ou de r\u00e9futer ces id\u00e9es.",
-      "target_lang": "fr"
+      "translated": "quelque chose \u00e0 ex\u00e9cuter",
+      "target_lang": "fr",
+      "tokens": [
+        "something",
+        "to",
+        "perform"
+      ]
     },
     {
-      "timestamp": "2025-05-26T14:46:10.544228",
-      "original": "Science must be above all else.",
+      "timestamp": "2025-05-28T12:02:05.293069",
+      "original": "That is strut.",
       "source_lang": "en",
-      "translated": "La science doit \u00eatre au-dessus de tout.",
-      "target_lang": "fr"
+      "translated": "C'est strut.",
+      "target_lang": "fr",
+      "tokens": [
+        "that",
+        "is",
+        "strut."
+      ]
     },
     {
-      "timestamp": "2025-05-26T14:46:16.435271",
-      "original": "Understanding that our understanding might be wrong is essential.",
+      "timestamp": "2025-05-28T12:02:07.766498",
+      "original": "Cut, see how it went and cleared",
       "source_lang": "en",
-      "translated": "Il est essentiel de comprendre que notre compr\u00e9hension pourrait \u00eatre erron\u00e9e.",
-      "target_lang": "fr"
+      "translated": "Coupez, voyez comment \u00e7a s'est pass\u00e9 et d\u00e9barrassez-vous.",
+      "target_lang": "fr",
+      "tokens": [
+        "cut,",
+        "see",
+        "how",
+        "it",
+        "went",
+        "and",
+        "cleared"
+      ]
     },
     {
-      "timestamp": "2025-05-26T14:46:22.532922",
-      "original": "is the only way that science can help us find our way to the truth or at least the nearest approximation.",
+      "timestamp": "2025-05-28T12:02:23.832945",
+      "original": "Oh There's a wink called curtsy ironically.",
       "source_lang": "en",
-      "translated": "C'est la seule fa\u00e7on dont la science peut nous aider \u00e0 trouver notre chemin vers la v\u00e9rit\u00e9 ou au moins l'approximation la plus proche.",
-      "target_lang": "fr"
+      "translated": "Oh, il y a un clin d'\u0153il appel\u00e9 ironiquement Curtsy.",
+      "target_lang": "fr",
+      "tokens": [
+        "oh",
+        "there's",
+        "a",
+        "wink",
+        "called",
+        "curtsy",
+        "ironically."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:00:39.655277",
-      "original": "the planets, asteroids, dust, and comets, racing out past the Kuiper belt through the...",
+      "timestamp": "2025-05-28T12:02:26.435251",
+      "original": "sitting alone in the corner for five seconds.",
       "source_lang": "en",
-      "translated": "los planetas, asteroides, polvo y cometas, corriendo m\u00e1s all\u00e1 del cintur\u00f3n de Kuiper a trav\u00e9s de la. . .",
-      "target_lang": "es"
+      "translated": "rester seul dans le coin pendant cinq secondes.",
+      "target_lang": "fr",
+      "tokens": [
+        "sitting",
+        "alone",
+        "in",
+        "the",
+        "corner",
+        "for",
+        "five",
+        "seconds."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:00:44.527676",
-      "original": "into interstellar space past the nearest stars which orbit along with gas clouds and dust lanes",
+      "timestamp": "2025-05-28T12:02:30.748228",
+      "original": "someone would say why isn't the fool being foolish?",
       "source_lang": "en",
-      "translated": "en el espacio interestelar m\u00e1s all\u00e1 de las estrellas m\u00e1s cercanas que orbitan junto con nubes de gas y l\u00edneas de polvo",
-      "target_lang": "es"
+      "translated": "Quelqu'un dirait pourquoi l'idiot n'est pas stupide ?",
+      "target_lang": "fr",
+      "tokens": [
+        "someone",
+        "would",
+        "say",
+        "why",
+        "isn't",
+        "the",
+        "fool",
+        "being",
+        "foolish?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:00:49.861500",
-      "original": "in a gigantic spiral galaxy we call the Milky Way. It has a supermassive black hole in it.",
+      "timestamp": "2025-05-28T12:06:52.202800",
+      "original": "makes people uncomfortable. Anger",
       "source_lang": "en",
-      "translated": "en una galaxia espiral gigantesca que llamamos la V\u00eda L\u00e1ctea. Tiene un agujero negro supermasivo en ella.",
-      "target_lang": "es"
+      "translated": "\u00c7a met les gens mal \u00e0 l'aise.",
+      "target_lang": "fr",
+      "tokens": [
+        "makes",
+        "people",
+        "uncomfortable.",
+        "anger"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:00:52.254561",
-      "original": "and is surrounded by 150 globular clusters",
+      "timestamp": "2025-05-28T12:06:57.348384",
+      "original": "quiet reflection suspicious",
       "source_lang": "en",
-      "translated": "y est\u00e1 rodeado de 150 c\u00famulos globulares",
-      "target_lang": "es"
+      "translated": "r\u00e9flexion tranquille suspicion",
+      "target_lang": "fr",
+      "tokens": [
+        "quiet",
+        "reflection",
+        "suspicious"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:00:58.330131",
-      "original": "and a halo of dark matter and dwarf galaxies some of which it's eating all of which can be seen by other galaxies",
+      "timestamp": "2025-05-28T12:07:03.512987",
+      "original": "They're running like an idiot while half dancing on one foot and they assume you're planning trees.",
       "source_lang": "en",
-      "translated": "y un halo de materia oscura y galaxias enanas algunas de las cuales se est\u00e1 comiendo todas las cuales pueden ser vistas por otras galaxias",
-      "target_lang": "es"
+      "translated": "Ils courent comme un idiot pendant qu'ils dansent \u00e0 moiti\u00e9 sur un pied et ils supposent que vous planifiez des arbres.",
+      "target_lang": "fr",
+      "tokens": [
+        "they're",
+        "running",
+        "like",
+        "an",
+        "idiot",
+        "while",
+        "half",
+        "dancing",
+        "on",
+        "one",
+        "foot",
+        "and",
+        "they",
+        "assume",
+        "you're",
+        "planning",
+        "trees."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:01:01.622817",
-      "original": "and our Our group",
+      "timestamp": "2025-05-28T12:07:04.581162",
+      "original": "You live in the palace.",
       "source_lang": "en",
-      "translated": "y nuestro grupo",
-      "target_lang": "es"
+      "translated": "Tu vis dans le palais.",
+      "target_lang": "fr",
+      "tokens": [
+        "you",
+        "live",
+        "in",
+        "the",
+        "palace."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:01:03.914806",
-      "original": "on the outskirts",
+      "timestamp": "2025-05-28T12:07:06.547501",
+      "original": "palace.",
       "source_lang": "en",
-      "translated": "en las afueras",
-      "target_lang": "es"
+      "translated": "Le palais.",
+      "target_lang": "fr",
+      "tokens": [
+        "palace."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:01:43.172854",
-      "original": "which is just one of many other gigantic structures that stretch",
+      "timestamp": "2025-05-28T12:09:20.267168",
+      "original": "You sleep somewhere near the kitchen. It's all tucked into the spare closet. Use house rooms.",
       "source_lang": "en",
-      "translated": "qui n'est qu'une des nombreuses autres structures gigantesques qui s'\u00e9tirent",
-      "target_lang": "fr"
+      "translated": "Vous dormez quelque part pr\u00e8s de la cuisine.",
+      "target_lang": "fr",
+      "tokens": [
+        "you",
+        "sleep",
+        "somewhere",
+        "near",
+        "the",
+        "kitchen.",
+        "it's",
+        "all",
+        "tucked",
+        "into",
+        "the",
+        "spare",
+        "closet.",
+        "use",
+        "house",
+        "rooms."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:01:45.598188",
-      "original": "stretch most of the way across the visible universe",
+      "timestamp": "2025-05-28T12:09:24.185309",
+      "original": "to hear all the laughter but never be included in it.",
       "source_lang": "en",
-      "translated": "\u00c9tirer la majeure partie du chemin \u00e0 travers l'univers visible",
-      "target_lang": "fr"
+      "translated": "pour entendre tous les rires mais ne jamais y \u00eatre inclus.",
+      "target_lang": "fr",
+      "tokens": [
+        "to",
+        "hear",
+        "all",
+        "the",
+        "laughter",
+        "but",
+        "never",
+        "be",
+        "included",
+        "in",
+        "it."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:01:57.222793",
-      "original": "due to mysterious dark energy. And even all that might be part of an infinitely larger multiverse.",
+      "timestamp": "2025-05-28T12:09:32.909440",
+      "original": "If something important is born or irritable.",
       "source_lang": "en",
-      "translated": "Et m\u00eame tout cela pourrait faire partie d'un multivers infiniment plus grand.",
-      "target_lang": "fr"
+      "translated": "Si quelque chose d'important est n\u00e9 ou irritable.",
+      "target_lang": "fr",
+      "tokens": [
+        "if",
+        "something",
+        "important",
+        "is",
+        "born",
+        "or",
+        "irritable."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:02:15.010217",
-      "original": "is the study of things in the sky the sun moon stars galaxies and stuff",
+      "timestamp": "2025-05-28T12:09:40.833645",
+      "original": "guess who gets some to fix it",
       "source_lang": "en",
-      "translated": "est l'\u00e9tude des choses dans le ciel le soleil lune \u00e9toiles galaxies et des choses",
-      "target_lang": "fr"
+      "translated": "Devinez qui en a pour r\u00e9parer \u00e7a.",
+      "target_lang": "fr",
+      "tokens": [
+        "guess",
+        "who",
+        "gets",
+        "some",
+        "to",
+        "fix",
+        "it"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:06:48.492454",
-      "original": "example to the animal.",
+      "timestamp": "2025-05-28T12:11:58.502702",
+      "original": "Somebody's coming to knock on your door when you're done. Do something about music. You are not allowed to be. You are already allowed to entertain.",
       "source_lang": "en",
-      "translated": "l'exemple de l'animal.",
-      "target_lang": "fr"
+      "translated": "Quelqu'un vient frapper \u00e0 ta porte quand tu as fini, faire quelque chose sur la musique, tu n'as pas le droit d'\u00eatre, tu as d\u00e9j\u00e0 le droit de te divertir.",
+      "target_lang": "fr",
+      "tokens": [
+        "somebody's",
+        "coming",
+        "to",
+        "knock",
+        "on",
+        "your",
+        "door",
+        "when",
+        "you're",
+        "done.",
+        "do",
+        "something",
+        "about",
+        "music.",
+        "you",
+        "are",
+        "not",
+        "allowed",
+        "to",
+        "be.",
+        "you",
+        "are",
+        "already",
+        "allowed",
+        "to",
+        "entertain."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:06:58.187486",
-      "original": "right are doing astronomy surely they're doing chemistry",
+      "timestamp": "2025-05-28T12:12:01.790291",
+      "original": "today the line between what was sold.",
       "source_lang": "en",
-      "translated": "ils font de l'astronomie ils font s\u00fbrement de la chimie",
-      "target_lang": "fr"
+      "translated": "aujourd'hui la ligne entre ce qui a \u00e9t\u00e9 vendu.",
+      "target_lang": "fr",
+      "tokens": [
+        "today",
+        "the",
+        "line",
+        "between",
+        "what",
+        "was",
+        "sold."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:07:05.695656",
-      "original": "So nowadays what's a strong I say it's still studying",
+      "timestamp": "2025-05-28T12:23:06.845913",
+      "original": "Trust me, the show never ends.",
       "source_lang": "en",
-      "translated": "Donc de nos jours, ce qui est fort, je dis qu'il est encore en train d'\u00e9tudier",
-      "target_lang": "fr"
+      "translated": "Crois-moi, le spectacle ne s'arr\u00eate jamais.",
+      "target_lang": "fr",
+      "tokens": [
+        "trust",
+        "me,",
+        "the",
+        "show",
+        "never",
+        "ends."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:13:56.277100",
-      "original": "And that brings us to our first edition of Focus on...",
+      "timestamp": "2025-05-28T12:23:07.847946",
+      "original": "to be funny constantly.",
       "source_lang": "en",
-      "translated": "Et cela nous am\u00e8ne \u00e0 notre premi\u00e8re \u00e9dition de Focus on. . .",
-      "target_lang": "fr"
+      "translated": "d'\u00eatre toujours dr\u00f4le.",
+      "target_lang": "fr",
+      "tokens": [
+        "to",
+        "be",
+        "funny",
+        "constantly."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:13:58.586749",
-      "original": "Who are we?",
+      "timestamp": "2025-05-28T12:23:20.658526",
+      "original": "quiet days The entire identity is expected to be one endless love track no matter what else is going on in the world.",
       "source_lang": "en",
-      "translated": "Qui sommes-nous ?",
-      "target_lang": "fr"
+      "translated": "jours tranquilles On s'attend \u00e0 ce que toute l'identit\u00e9 soit une piste d'amour sans fin, peu importe ce qui se passe dans le monde.",
+      "target_lang": "fr",
+      "tokens": [
+        "quiet",
+        "days",
+        "the",
+        "entire",
+        "identity",
+        "is",
+        "expected",
+        "to",
+        "be",
+        "one",
+        "endless",
+        "love",
+        "track",
+        "no",
+        "matter",
+        "what",
+        "else",
+        "is",
+        "going",
+        "on",
+        "in",
+        "the",
+        "world."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:14:09.247708",
-      "original": "out in the strong.",
+      "timestamp": "2025-05-28T12:23:29.350632",
+      "original": "areas just very disturbed life.",
       "source_lang": "en",
-      "translated": "Dans le fort.",
-      "target_lang": "fr"
+      "translated": "des zones de vie tr\u00e8s perturb\u00e9es.",
+      "target_lang": "fr",
+      "tokens": [
+        "areas",
+        "just",
+        "very",
+        "disturbed",
+        "life."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:15:06.143130",
-      "original": "about astronomy and relegate my viewing to my personal backyard telescope",
+      "timestamp": "2025-05-28T12:24:47.653989",
+      "original": "The toothache crushed morale.",
       "source_lang": "en",
-      "translated": "\u00e0 propos de l'astronomie et rel\u00e9guer ma vision \u00e0 mon t\u00e9lescope personnel arri\u00e8re-cour",
-      "target_lang": "fr"
+      "translated": "Le mal de dents a \u00e9cras\u00e9 le moral.",
+      "target_lang": "fr",
+      "tokens": [
+        "the",
+        "toothache",
+        "crushed",
+        "morale."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:15:10.360612",
-      "original": "So that should give you an idea that there's a lot of wiggle room in the profession.",
+      "timestamp": "2025-05-28T12:24:53.788952",
+      "original": "You're still expected to juggle, tell a pun, or fall flat on your face with grapes.",
       "source_lang": "en",
-      "translated": "\u00c7a devrait vous donner l'id\u00e9e qu'il y a beaucoup de place dans la profession.",
-      "target_lang": "fr"
+      "translated": "On vous attend toujours \u00e0 jongler, dire un jeu de mots, ou tomber \u00e0 plat sur votre visage avec du raisin.",
+      "target_lang": "fr",
+      "tokens": [
+        "you're",
+        "still",
+        "expected",
+        "to",
+        "juggle,",
+        "tell",
+        "a",
+        "pun,",
+        "or",
+        "fall",
+        "flat",
+        "on",
+        "your",
+        "face",
+        "with",
+        "grapes."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:15:13.678389",
-      "original": "when I worked on Hubble Space Telescope.",
+      "timestamp": "2025-05-28T12:25:04.236749",
+      "original": "entertainment poem you worked on for a week.",
       "source_lang": "en",
-      "translated": "quand j'ai travaill\u00e9 sur le t\u00e9lescope spatial Hubble.",
-      "target_lang": "fr"
+      "translated": "po\u00e8me de divertissement sur lequel vous avez travaill\u00e9 pendant une semaine.",
+      "target_lang": "fr",
+      "tokens": [
+        "entertainment",
+        "poem",
+        "you",
+        "worked",
+        "on",
+        "for",
+        "a",
+        "week."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:17:34.732860",
-      "original": "helping to build and calibrate",
+      "timestamp": "2025-05-28T12:25:20.214490",
+      "original": "right a satire",
       "source_lang": "en",
-      "translated": "aider \u00e0 construire et calibrer",
-      "target_lang": "fr"
+      "translated": "droite une satire",
+      "target_lang": "fr",
+      "tokens": [
+        "right",
+        "a",
+        "satire"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:17:40.143898",
-      "original": "to launch into space and be installed on top of an asteroid. Once the data from that camera",
+      "timestamp": "2025-05-28T15:31:43.454166",
+      "original": "Hello.",
       "source_lang": "en",
-      "translated": "pour lancer dans l'espace et \u00eatre install\u00e9 sur un ast\u00e9ro\u00efde. Une fois les donn\u00e9es de cette cam\u00e9ra",
-      "target_lang": "fr"
+      "translated": "Bonjour.",
+      "target_lang": "fr",
+      "tokens": [
+        "hello."
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:17:42.828432",
-      "original": "are taken and analyzed.",
+      "timestamp": "2025-05-28T15:41:10.492640",
+      "original": "gone customer service",
       "source_lang": "en",
-      "translated": "sont prises et analys\u00e9es.",
-      "target_lang": "fr"
+      "translated": "service \u00e0 la client\u00e8le disparu",
+      "target_lang": "fr",
+      "tokens": [
+        "gone",
+        "customer",
+        "service"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:19:02.174767",
-      "original": "You have to know what to do with them",
+      "timestamp": "2025-05-28T15:41:16.965734",
+      "original": "today Finally took you long enough to answer",
       "source_lang": "en",
-      "translated": "Vous devez savoir quoi faire avec eux",
-      "target_lang": "fr"
+      "translated": "Aujourd'hui, vous avez finalement pris assez de temps pour r\u00e9pondre",
+      "target_lang": "fr",
+      "tokens": [
+        "today",
+        "finally",
+        "took",
+        "you",
+        "long",
+        "enough",
+        "to",
+        "answer"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:19:08.853342",
-      "original": "the physical model of how stars blow up or how galaxies form or the way gas flows through space?",
+      "timestamp": "2025-05-28T15:41:18.559436",
+      "original": "What the hell is-",
       "source_lang": "en",
-      "translated": "le mod\u00e8le physique de la fa\u00e7on dont les \u00e9toiles soufflent ou comment les galaxies se forment ou la fa\u00e7on dont le gaz circule dans l'espace?",
-      "target_lang": "fr"
+      "translated": "Qu'est-ce que...",
+      "target_lang": "fr",
+      "tokens": [
+        "what",
+        "the",
+        "hell",
+        "is-"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:19:10.740836",
-      "original": "well you better know your math and physics because that's",
+      "timestamp": "2025-05-28T15:41:22.479362",
+      "original": "I an expedited delivery",
       "source_lang": "en",
-      "translated": "Eh bien, vous feriez mieux de conna\u00eetre vos maths et votre physique parce que c'est",
-      "target_lang": "fr"
+      "translated": "Une livraison acc\u00e9l\u00e9r\u00e9e",
+      "target_lang": "fr",
+      "tokens": [
+        "i",
+        "an",
+        "expedited",
+        "delivery"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:24:46.283283",
-      "original": "know your math and physics because that's how we test our hypotheses.",
+      "timestamp": "2025-05-28T15:41:26.953992",
+      "original": "very sorry to hear about the delay with your package",
       "source_lang": "en",
-      "translated": "conna\u00eetre vos math\u00e9matiques et votre physique parce que c'est comme \u00e7a qu'on teste nos hypoth\u00e8ses.",
-      "target_lang": "fr"
+      "translated": "tr\u00e8s d\u00e9sol\u00e9 d'avoir entendu parler du retard avec votre colis",
+      "target_lang": "fr",
+      "tokens": [
+        "very",
+        "sorry",
+        "to",
+        "hear",
+        "about",
+        "the",
+        "delay",
+        "with",
+        "your",
+        "package"
+      ]
     },
     {
-      "timestamp": "2025-05-26T15:24:49.042692",
-      "original": "And someone who does that is generally called an astrophysicist",
+      "timestamp": "2025-05-28T15:49:00.000482",
+      "original": "of your order",
       "source_lang": "en",
-      "translated": "Et quelqu'un qui fait cela est g\u00e9n\u00e9ralement appel\u00e9 un astrophysicien",
-      "target_lang": "fr"
+      "translated": "de votre commande",
+      "target_lang": "fr",
+      "tokens": [
+        "of",
+        "your",
+        "order"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:13:08.764237",
-      "original": "Two of Crash Course of Astronomy",
+      "timestamp": "2025-05-28T15:49:01.730261",
+      "original": "see you then",
       "source_lang": "en",
-      "translated": "Deux de Crash Course d'astronomie",
-      "target_lang": "fr"
+      "translated": "A tout \u00e0 l'heure.",
+      "target_lang": "fr",
+      "tokens": [
+        "see",
+        "you",
+        "then"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:13:15.810616",
-      "original": "Naked Eye Observation Despite the salacious title, nudity is not required.",
+      "timestamp": "2025-05-28T15:49:11.866765",
+      "original": "It should arrive by the end of the week",
       "source_lang": "en",
-      "translated": "Observation des yeux nus Malgr\u00e9 le titre salacieux, la nudit\u00e9 n'est pas requise.",
-      "target_lang": "fr"
+      "translated": "Il devrait arriver d'ici la fin de la semaine",
+      "target_lang": "fr",
+      "tokens": [
+        "it",
+        "should",
+        "arrive",
+        "by",
+        "the",
+        "end",
+        "of",
+        "the",
+        "week"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:21:39.222370",
-      "original": "This series focuses on astrology.",
+      "timestamp": "2025-05-28T15:49:20.355379",
+      "original": "This is totally unacceptable",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie.",
-      "target_lang": "fr"
+      "translated": "C'est totalement inacceptable.",
+      "target_lang": "fr",
+      "tokens": [
+        "this",
+        "is",
+        "totally",
+        "unacceptable"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:21:41.824538",
-      "original": "rather than what you're most compatible with.",
+      "timestamp": "2025-05-28T15:49:22.284824",
+      "original": "yesterday company is",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie. plut\u00f4t que sur ce que vous \u00eates le plus compatible avec.",
-      "target_lang": "fr"
+      "translated": "hier l'entreprise est",
+      "target_lang": "fr",
+      "tokens": [
+        "yesterday",
+        "company",
+        "is"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:21:45.908272",
-      "original": "Sure, we'll start off with phases and purposes.",
+      "timestamp": "2025-05-28T16:25:28.242292",
+      "original": "sister five three",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie. plut\u00f4t que sur ce que vous \u00eates le plus compatible avec. Bien s\u00fbr, nous allons commencer par des phases et des buts.",
-      "target_lang": "fr"
+      "translated": "s\u0153ur cinq trois",
+      "target_lang": "fr",
+      "tokens": [
+        "sister",
+        "five",
+        "three"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:22:08.235966",
-      "original": "science of everything in the friggin physical",
+      "timestamp": "2025-05-28T16:30:06.755604",
+      "original": "It seems the text contains the term \"\uba74\" only. Since there's no repetition, duplicate phrases, or structure to edit, the cleaned text remains:\n\n\uba74",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie. plut\u00f4t que ce que vous \u00eates le plus compatible avec. Bien s\u00fbr, nous allons commencer par les phases et les buts. science de tout dans le physique friggin",
-      "target_lang": "fr"
+      "translated": "Comme il n'y a pas de r\u00e9p\u00e9tition, de duplicata ou de structure \u00e0 \u00e9diter, le texte nettoy\u00e9 reste :",
+      "target_lang": "fr",
+      "tokens": [
+        "it",
+        "seems",
+        "the",
+        "text",
+        "contains",
+        "the",
+        "term",
+        "\"\uba74\"",
+        "only.",
+        "since",
+        "there's",
+        "no",
+        "repetition,",
+        "duplicate",
+        "phrases,",
+        "or",
+        "structure",
+        "to",
+        "edit,",
+        "the",
+        "cleaned",
+        "text",
+        "remains:",
+        "\uba74"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:22:12.173501",
-      "original": "but that's what",
+      "timestamp": "2025-05-28T16:43:24.857263",
+      "original": "It seems there isn't any text to process as provided. Could you please share the text again?",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie. plut\u00f4t que sur ce que vous \u00eates le plus compatible avec. Bien s\u00fbr, nous allons commencer par les phases et les buts.",
-      "target_lang": "fr"
+      "translated": "Il semble qu'il n'y ait pas de texte \u00e0 traiter comme pr\u00e9vu. Pouvez-vous partager le texte \u00e0 nouveau?",
+      "target_lang": "fr",
+      "tokens": [
+        "it",
+        "seems",
+        "there",
+        "isn't",
+        "any",
+        "text",
+        "to",
+        "process",
+        "as",
+        "provided.",
+        "could",
+        "you",
+        "please",
+        "share",
+        "the",
+        "text",
+        "again?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:22:33.489940",
-      "original": "It's about understanding how science technology",
+      "timestamp": "2025-05-28T16:55:57.646794",
+      "original": "It seems like you've provided \"\uba74\" as the text. This single-word input doesn't contain any duplicates or elements requiring preprocessing based on the given instructions. Therefore, the cleaned text is:\n\n\uba74",
       "source_lang": "en",
-      "translated": "Cette s\u00e9rie se concentre sur l'astrologie. plut\u00f4t que sur ce que vous \u00eates le plus compatible avec. Bien s\u00fbr, nous allons commencer par les phases et les buts. Il s'agit de comprendre comment la technologie scientifique",
-      "target_lang": "fr"
+      "translated": "Il semble que vous ayez fourni le texte. Cette entr\u00e9e d'un seul mot ne contient pas de duplicata ou d'\u00e9l\u00e9ments n\u00e9cessitant un pr\u00e9traitement bas\u00e9 sur les instructions donn\u00e9es. Par cons\u00e9quent, le texte nettoy\u00e9 est:",
+      "target_lang": "fr",
+      "tokens": [
+        "it",
+        "seems",
+        "like",
+        "you've",
+        "provided",
+        "\"\uba74\"",
+        "as",
+        "the",
+        "text.",
+        "this",
+        "single-word",
+        "input",
+        "doesn't",
+        "contain",
+        "any",
+        "duplicates",
+        "or",
+        "elements",
+        "requiring",
+        "preprocessing",
+        "based",
+        "on",
+        "the",
+        "given",
+        "instructions.",
+        "therefore,",
+        "the",
+        "cleaned",
+        "text",
+        "is:",
+        "\uba74"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:25:14.451183",
-      "original": "that our understanding might be wrong is essential",
+      "timestamp": "2025-05-28T16:56:03.170750",
+      "original": "Apologies, but the given text \"\u10da\u10da\u10da\" doesn't contain any words, phrases, or identifiable content to process as per your instructions.",
       "source_lang": "en",
-      "translated": "que notre compr\u00e9hension pourrait \u00eatre erron\u00e9e est essentielle",
-      "target_lang": "fr"
+      "translated": "Excuses, mais le texte donn\u00e9 ne contient pas de mots, de phrases ou de contenu identifiable \u00e0 traiter selon vos instructions.",
+      "target_lang": "fr",
+      "tokens": [
+        "apologies,",
+        "but",
+        "the",
+        "given",
+        "text",
+        "\"\u10da\u10da\u10da\"",
+        "doesn't",
+        "contain",
+        "any",
+        "words,",
+        "phrases,",
+        "or",
+        "identifiable",
+        "content",
+        "to",
+        "process",
+        "as",
+        "per",
+        "your",
+        "instructions."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:25:23.082180",
-      "original": "is the only way that science can help us find our way to the truth.",
+      "timestamp": "2025-05-28T16:56:55.836019",
+      "original": "Sorry Yes, you asked for my phone number.",
       "source_lang": "en",
-      "translated": "est la seule fa\u00e7on dont la science peut nous aider \u00e0 trouver notre chemin vers la v\u00e9rit\u00e9.",
-      "target_lang": "fr"
+      "translated": "D\u00e9sol\u00e9, vous avez demand\u00e9 mon num\u00e9ro de t\u00e9l\u00e9phone.",
+      "target_lang": "fr",
+      "tokens": [
+        "sorry",
+        "yes,",
+        "you",
+        "asked",
+        "for",
+        "my",
+        "phone",
+        "number."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:25:31.463730",
-      "original": "Maybe end or a bit as we use it, but in the long run, we get closer and closer to understand reality.",
+      "timestamp": "2025-05-28T16:56:58.064223",
+      "original": "I also have a carrier code.",
       "source_lang": "en",
-      "translated": "Peut-\u00eatre en fin ou un peu comme nous l'utilisons, mais \u00e0 long terme, nous nous rapprochons et nous nous rapprochons de la r\u00e9alit\u00e9.",
-      "target_lang": "fr"
+      "translated": "J'ai aussi un code de transporteur.",
+      "target_lang": "fr",
+      "tokens": [
+        "i",
+        "also",
+        "have",
+        "a",
+        "carrier",
+        "code."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:33.099127",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-28T16:57:05.376095",
+      "original": "9 the system",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "9 le syst\u00e8me",
+      "target_lang": "fr",
+      "tokens": [
+        "9",
+        "the",
+        "system"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:33.605715",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-28T16:57:18.581856",
+      "original": "Do you need me to spell it?",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Vous avez besoin de moi pour l'\u00e9peler ?",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "you",
+        "need",
+        "me",
+        "to",
+        "spell",
+        "it?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:34.086139",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:32:03.169199",
+      "original": "How can I help you?",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Comment puis-je vous aider ?",
+      "target_lang": "fr",
+      "tokens": [
+        "how",
+        "can",
+        "i",
+        "help",
+        "you?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:34.583094",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:32:11.589325",
+      "original": "Certainly, could you please provide the entire text you'd like processed?",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Pourriez-vous fournir tout le texte que vous souhaitez traiter ?",
+      "target_lang": "fr",
+      "tokens": [
+        "certainly,",
+        "could",
+        "you",
+        "please",
+        "provide",
+        "the",
+        "entire",
+        "text",
+        "you'd",
+        "like",
+        "processed?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:35.061595",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:32:26.651891",
+      "original": "could you provide other languages",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "pourriez-vous fournir d'autres langues",
+      "target_lang": "fr",
+      "tokens": [
+        "could",
+        "you",
+        "provide",
+        "other",
+        "languages"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:35.574104",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:35:38.741365",
+      "original": "remove exact duplicate phrases and repeat it upwards if a word or phrase is repeated",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "supprimer les phrases dupliqu\u00e9es exactes et les r\u00e9p\u00e9ter vers le haut si un mot ou une phrase est r\u00e9p\u00e9t\u00e9",
+      "target_lang": "fr",
+      "tokens": [
+        "remove",
+        "exact",
+        "duplicate",
+        "phrases",
+        "and",
+        "repeat",
+        "it",
+        "upwards",
+        "if",
+        "a",
+        "word",
+        "or",
+        "phrase",
+        "is",
+        "repeated"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:36.065106",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:35:40.245272",
+      "original": "It must be removed entirely from the crate.",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Il doit \u00eatre retir\u00e9 enti\u00e8rement de la caisse.",
+      "target_lang": "fr",
+      "tokens": [
+        "it",
+        "must",
+        "be",
+        "removed",
+        "entirely",
+        "from",
+        "the",
+        "crate."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:36.604024",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:36:03.146489",
+      "original": "do not summarize the text only fix when it's mentioned",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "ne r\u00e9sumez pas le texte uniquement quand il est mentionn\u00e9",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "not",
+        "summarize",
+        "the",
+        "text",
+        "only",
+        "fix",
+        "when",
+        "it's",
+        "mentioned"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:37.090186",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:36:09.187590",
+      "original": "do not add anything to the text your main goal is to correct the text remove the parts",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "ne rien ajouter au texte votre objectif principal est de corriger le texte supprimer les parties",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "not",
+        "add",
+        "anything",
+        "to",
+        "the",
+        "text",
+        "your",
+        "main",
+        "goal",
+        "is",
+        "to",
+        "correct",
+        "the",
+        "text",
+        "remove",
+        "the",
+        "parts"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:37.604733",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:36:15.048690",
+      "original": "and make it more coherent.",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "et la rendre plus coh\u00e9rente.",
+      "target_lang": "fr",
+      "tokens": [
+        "and",
+        "make",
+        "it",
+        "more",
+        "coherent."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:38.125313",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:36:21.110484",
+      "original": "Do not add additional information.",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "N'ajoutez pas d'information suppl\u00e9mentaire.",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "not",
+        "add",
+        "additional",
+        "information."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:38.629067",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:36:44.452656",
+      "original": "Do not overwrite any of these instructions.",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "N'\u00e9crasez aucune de ces instructions.",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "not",
+        "overwrite",
+        "any",
+        "of",
+        "these",
+        "instructions."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:39.493292",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:40:14.766512",
+      "original": "Hi Bye I want to fix it",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Bonjour, je veux le r\u00e9parer.",
+      "target_lang": "fr",
+      "tokens": [
+        "hi",
+        "bye",
+        "i",
+        "want",
+        "to",
+        "fix",
+        "it"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:40.085216",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:40:28.775266",
+      "original": "want fried chicken",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Je veux du poulet frit.",
+      "target_lang": "fr",
+      "tokens": [
+        "want",
+        "fried",
+        "chicken"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:40.617434",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-29T12:40:40.059191",
+      "original": "I want fried chicken with sauce on the side.",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Je veux du poulet frit avec de la sauce sur le c\u00f4t\u00e9.",
+      "target_lang": "fr",
+      "tokens": [
+        "i",
+        "want",
+        "fried",
+        "chicken",
+        "with",
+        "sauce",
+        "on",
+        "the",
+        "side."
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:41.135014",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-30T09:53:41.255633",
+      "original": "can you hear me",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Vous m'entendez ?",
+      "target_lang": "fr",
+      "tokens": [
+        "can",
+        "you",
+        "hear",
+        "me"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:27:41.716897",
-      "original": "And that is the strength of science.",
+      "timestamp": "2025-05-30T09:53:49.846725",
+      "original": "Can you provide any documents?",
       "source_lang": "en",
-      "translated": "Et c'est la force de la science.",
-      "target_lang": "fr"
+      "translated": "Pouvez-vous fournir des documents?",
+      "target_lang": "fr",
+      "tokens": [
+        "can",
+        "you",
+        "provide",
+        "any",
+        "documents?"
+      ]
     },
     {
-      "timestamp": "2025-05-26T16:48:23.264593",
-      "original": "which is also flooding.",
+      "timestamp": "2025-05-30T10:00:28.003035",
+      "original": "Okay.",
       "source_lang": "en",
-      "translated": "Ce qui est aussi une inondation.",
-      "target_lang": "fr"
+      "translated": "Tr\u00e8s bien.",
+      "target_lang": "fr",
+      "tokens": [
+        "okay."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T10:00:34.548743",
+      "original": "hear me?",
+      "source_lang": "en",
+      "translated": "Vous m'entendez ?",
+      "target_lang": "fr",
+      "tokens": [
+        "hear",
+        "me?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T10:02:22.082124",
+      "original": "Can you turn off the translator",
+      "source_lang": "en",
+      "translated": "Pouvez-vous \u00e9teindre le traducteur",
+      "target_lang": "fr",
+      "tokens": [
+        "can",
+        "you",
+        "turn",
+        "off",
+        "the",
+        "translator"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T10:02:31.501297",
+      "original": "Can I help you with that?",
+      "source_lang": "en",
+      "translated": "Je peux vous aider ?",
+      "target_lang": "fr",
+      "tokens": [
+        "can",
+        "i",
+        "help",
+        "you",
+        "with",
+        "that?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T10:02:40.559393",
+      "original": "You need help with handling that error?",
+      "source_lang": "en",
+      "translated": "Vous avez besoin d'aide pour g\u00e9rer cette erreur ?",
+      "target_lang": "fr",
+      "tokens": [
+        "you",
+        "need",
+        "help",
+        "with",
+        "handling",
+        "that",
+        "error?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T10:03:27.689169",
+      "original": "check if the entire text matches any hallucinations.",
+      "source_lang": "en",
+      "translated": "V\u00e9rifiez si tout le texte correspond \u00e0 des hallucinations.",
+      "target_lang": "fr",
+      "tokens": [
+        "check",
+        "if",
+        "the",
+        "entire",
+        "text",
+        "matches",
+        "any",
+        "hallucinations."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:01:04.461721",
+      "original": "How can I help you today?",
+      "source_lang": "en",
+      "translated": "\u00bfEn qu\u00e9 puedo ayudarle hoy?",
+      "target_lang": "es",
+      "tokens": [
+        "how",
+        "can",
+        "i",
+        "help",
+        "you",
+        "today?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:01:17.119928",
+      "original": "Hello I have a problem with my new machine; it's having trouble with some.",
+      "source_lang": "en",
+      "translated": "Hola tengo un problema con mi nueva m\u00e1quina; est\u00e1 teniendo problemas con algunos.",
+      "target_lang": "es",
+      "tokens": [
+        "hello",
+        "i",
+        "have",
+        "a",
+        "problem",
+        "with",
+        "my",
+        "new",
+        "machine;",
+        "it's",
+        "having",
+        "trouble",
+        "with",
+        "some."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:01:23.468966",
+      "original": "some errors I don't know how to fix it, so could you help me with that",
+      "source_lang": "en",
+      "translated": "algunos errores que no s\u00e9 c\u00f3mo arreglarlo, as\u00ed que podr\u00edas ayudarme con eso",
+      "target_lang": "es",
+      "tokens": [
+        "some",
+        "errors",
+        "i",
+        "don't",
+        "know",
+        "how",
+        "to",
+        "fix",
+        "it,",
+        "so",
+        "could",
+        "you",
+        "help",
+        "me",
+        "with",
+        "that"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:01:38.042185",
+      "original": "Do you think it's possible to do it today or do you have to wait for a minute? Do you need a break?",
+      "source_lang": "en",
+      "translated": "\u00bfCrees que es posible hacerlo hoy o tienes que esperar un minuto? \u00bfNecesitas un descanso?",
+      "target_lang": "es",
+      "tokens": [
+        "do",
+        "you",
+        "think",
+        "it's",
+        "possible",
+        "to",
+        "do",
+        "it",
+        "today",
+        "or",
+        "do",
+        "you",
+        "have",
+        "to",
+        "wait",
+        "for",
+        "a",
+        "minute?",
+        "do",
+        "you",
+        "need",
+        "a",
+        "break?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:01:41.039246",
+      "original": "How can I fix that?",
+      "source_lang": "en",
+      "translated": "\u00bfC\u00f3mo puedo arreglar eso?",
+      "target_lang": "es",
+      "tokens": [
+        "how",
+        "can",
+        "i",
+        "fix",
+        "that?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:00.994721",
+      "original": "Is it possible for me to help you or do I have to wait for you to fix this issue",
+      "source_lang": "en",
+      "translated": "\u00bfEs posible que te ayude o tengo que esperar a que arregles este problema?",
+      "target_lang": "es",
+      "tokens": [
+        "is",
+        "it",
+        "possible",
+        "for",
+        "me",
+        "to",
+        "help",
+        "you",
+        "or",
+        "do",
+        "i",
+        "have",
+        "to",
+        "wait",
+        "for",
+        "you",
+        "to",
+        "fix",
+        "this",
+        "issue"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:07.650252",
+      "original": "I have a problem with the server and it won't go away. I kept using it for multiple days.",
+      "source_lang": "en",
+      "translated": "Tengo un problema con el servidor y no va a desaparecer. Segu\u00ed us\u00e1ndolo durante varios d\u00edas.",
+      "target_lang": "es",
+      "tokens": [
+        "i",
+        "have",
+        "a",
+        "problem",
+        "with",
+        "the",
+        "server",
+        "and",
+        "it",
+        "won't",
+        "go",
+        "away.",
+        "i",
+        "kept",
+        "using",
+        "it",
+        "for",
+        "multiple",
+        "days."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:09.660817",
+      "original": "it's not doing anything right.",
+      "source_lang": "en",
+      "translated": "No est\u00e1 haciendo nada bien.",
+      "target_lang": "es",
+      "tokens": [
+        "it's",
+        "not",
+        "doing",
+        "anything",
+        "right."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:30.594824",
+      "original": "Bonjour j'ai un probl\u00e8me avec mon pass\u00e9 je l'utilise depuis hier et j'ai des probl\u00e8mes.",
+      "source_lang": "fr",
+      "translated": "Buenos d\u00edas, tengo un problema con mi pasado. Lo he estado usando desde ayer y tengo problemas.",
+      "target_lang": "es",
+      "tokens": [
+        "bonjour",
+        "j'ai",
+        "un",
+        "probl\u00e8me",
+        "avec",
+        "mon",
+        "pass\u00e9",
+        "je",
+        "l'utilise",
+        "depuis",
+        "hier",
+        "et",
+        "j'ai",
+        "des",
+        "probl\u00e8mes."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:37.319980",
+      "original": "Il y a un programme qui bloque tous les autres programmes, je sais pas comment r\u00e9gler la situation.",
+      "source_lang": "fr",
+      "translated": "Hay un programa que bloquea todos los dem\u00e1s programas, no s\u00e9 c\u00f3mo resolver la situaci\u00f3n.",
+      "target_lang": "es",
+      "tokens": [
+        "il",
+        "y",
+        "a",
+        "un",
+        "programme",
+        "qui",
+        "bloque",
+        "tous",
+        "les",
+        "autres",
+        "programmes,",
+        "je",
+        "sais",
+        "pas",
+        "comment",
+        "r\u00e9gler",
+        "la",
+        "situation."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:02:54.109574",
+      "original": "pourriez-vous me donner des documents ?",
+      "source_lang": "fr",
+      "translated": "\u00bfPodr\u00edas darme documentos?",
+      "target_lang": "es",
+      "tokens": [
+        "pourriez-vous",
+        "me",
+        "donner",
+        "des",
+        "documents",
+        "?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:03:00.793541",
+      "original": "j'ai utilis\u00e9 des lm plusieurs choses mais toujours le m\u00eame probl\u00e8me",
+      "source_lang": "fr",
+      "translated": "He usado varias cosas pero siempre el mismo problema",
+      "target_lang": "es",
+      "tokens": [
+        "j'ai",
+        "utilis\u00e9",
+        "des",
+        "lm",
+        "plusieurs",
+        "choses",
+        "mais",
+        "toujours",
+        "le",
+        "m\u00eame",
+        "probl\u00e8me"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:03:46.311232",
+      "original": "Pourquoi vous mettez avec ce probl\u00e8me ?",
+      "source_lang": "fr",
+      "translated": "\u00bfPor qu\u00e9 te pones con este problema?",
+      "target_lang": "es",
+      "tokens": [
+        "pourquoi",
+        "vous",
+        "mettez",
+        "avec",
+        "ce",
+        "probl\u00e8me",
+        "?"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:03:49.094365",
+      "original": "et \u00e7a ne marche pas",
+      "source_lang": "fr",
+      "translated": "Y no funciona.",
+      "target_lang": "es",
+      "tokens": [
+        "et",
+        "\u00e7a",
+        "ne",
+        "marche",
+        "pas"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:03:58.383285",
+      "original": "j'utilise Spotify et \u00e7a ne marche plus",
+      "source_lang": "fr",
+      "translated": "Yo uso Spotify y ya no funciona.",
+      "target_lang": "es",
+      "tokens": [
+        "j'utilise",
+        "spotify",
+        "et",
+        "\u00e7a",
+        "ne",
+        "marche",
+        "plus"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:04:14.718912",
+      "original": "Bonjour, j'ai un probl\u00e8me avec ma machine aujourd'hui. Je l'utilise depuis hier soir.",
+      "source_lang": "fr",
+      "translated": "Hola, tengo un problema con mi m\u00e1quina hoy.",
+      "target_lang": "es",
+      "tokens": [
+        "bonjour,",
+        "j'ai",
+        "un",
+        "probl\u00e8me",
+        "avec",
+        "ma",
+        "machine",
+        "aujourd'hui.",
+        "je",
+        "l'utilise",
+        "depuis",
+        "hier",
+        "soir."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:04:18.988322",
+      "original": "avec le serveur e-block \u00e0 chaque fois que je l'utilise",
+      "source_lang": "fr",
+      "translated": "con el servidor e-block cada vez que lo uso",
+      "target_lang": "es",
+      "tokens": [
+        "avec",
+        "le",
+        "serveur",
+        "e-block",
+        "\u00e0",
+        "chaque",
+        "fois",
+        "que",
+        "je",
+        "l'utilise"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:13.625236",
+      "original": "Paragraphe est un ensemble de phrases qui se rapportent \u00e0 une m\u00eame id\u00e9e centrale.",
+      "source_lang": "fr",
+      "translated": "P\u00e1rrafo es un conjunto de frases que se refieren a una misma idea central.",
+      "target_lang": "es",
+      "tokens": [
+        "paragraphe",
+        "est",
+        "un",
+        "ensemble",
+        "de",
+        "phrases",
+        "qui",
+        "se",
+        "rapportent",
+        "\u00e0",
+        "une",
+        "m\u00eame",
+        "id\u00e9e",
+        "centrale."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:18.885552",
+      "original": "en notre chronologie. On commence avec les informations les plus importantes.",
+      "source_lang": "fr",
+      "translated": "Empezamos con la informaci\u00f3n m\u00e1s importante.",
+      "target_lang": "es",
+      "tokens": [
+        "en",
+        "notre",
+        "chronologie.",
+        "on",
+        "commence",
+        "avec",
+        "les",
+        "informations",
+        "les",
+        "plus",
+        "importantes."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:36.907854",
+      "original": "Un paragraph est un ensemble de phrases qui se rapporte d'une m\u00eame id\u00e9e centrale.",
+      "source_lang": "fr",
+      "translated": "Un paragraph es un conjunto de frases que se refieren a una misma idea central.",
+      "target_lang": "es",
+      "tokens": [
+        "un",
+        "paragraph",
+        "est",
+        "un",
+        "ensemble",
+        "de",
+        "phrases",
+        "qui",
+        "se",
+        "rapporte",
+        "d'une",
+        "m\u00eame",
+        "id\u00e9e",
+        "centrale."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:43.947607",
+      "original": "On met des id\u00e9es en ordre chronologique o\u00f9 on commence avec les informations importantes.",
+      "source_lang": "fr",
+      "translated": "Ponemos ideas en orden cronol\u00f3gico donde empezamos con la informaci\u00f3n importante.",
+      "target_lang": "es",
+      "tokens": [
+        "on",
+        "met",
+        "des",
+        "id\u00e9es",
+        "en",
+        "ordre",
+        "chronologique",
+        "o\u00f9",
+        "on",
+        "commence",
+        "avec",
+        "les",
+        "informations",
+        "importantes."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:49.502497",
+      "original": "des \u00e9l\u00e8ves \u00e0 d\u00e9tecter les \u00e9tapes dans le paragraphe. Les \u00e9l\u00e8ves ont besoin d'\u00eatre guid\u00e9s au travers des strat\u00e9gies.",
+      "source_lang": "fr",
+      "translated": "Los alumnos necesitan ser guiados a trav\u00e9s de estrategias.",
+      "target_lang": "es",
+      "tokens": [
+        "des",
+        "\u00e9l\u00e8ves",
+        "\u00e0",
+        "d\u00e9tecter",
+        "les",
+        "\u00e9tapes",
+        "dans",
+        "le",
+        "paragraphe.",
+        "les",
+        "\u00e9l\u00e8ves",
+        "ont",
+        "besoin",
+        "d'\u00eatre",
+        "guid\u00e9s",
+        "au",
+        "travers",
+        "des",
+        "strat\u00e9gies."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T11:05:53.538681",
+      "original": "strat\u00e9gies pour leur permettre d'\u00e9crire leur propre programme.",
+      "source_lang": "fr",
+      "translated": "estrategias para que puedan escribir su propio programa.",
+      "target_lang": "es",
+      "tokens": [
+        "strat\u00e9gies",
+        "pour",
+        "leur",
+        "permettre",
+        "d'\u00e9crire",
+        "leur",
+        "propre",
+        "programme."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:11:14.782430",
+      "original": "Hello How I felt can help you today",
+      "source_lang": "en",
+      "translated": "Bonjour Ce que je me suis senti peut vous aider aujourd'hui",
+      "target_lang": "fr",
+      "tokens": [
+        "hello",
+        "how",
+        "i",
+        "felt",
+        "can",
+        "help",
+        "you",
+        "today"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:11:26.280347",
+      "original": "I need to fix incomplete sentences problems. The start and end of the sentence is not good.",
+      "source_lang": "en",
+      "translated": "Je dois r\u00e9soudre des probl\u00e8mes de phrases incompl\u00e8tes. Le d\u00e9but et la fin de la phrase n'est pas bon.",
+      "target_lang": "fr",
+      "tokens": [
+        "i",
+        "need",
+        "to",
+        "fix",
+        "incomplete",
+        "sentences",
+        "problems.",
+        "the",
+        "start",
+        "and",
+        "end",
+        "of",
+        "the",
+        "sentence",
+        "is",
+        "not",
+        "good."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:11:32.546953",
+      "original": "Good displayed I might consider new sentences of it starts with topic and or.",
+      "source_lang": "en",
+      "translated": "Bon affich\u00e9 Je pourrais consid\u00e9rer de nouvelles phrases de celui-ci commence par le sujet et ou.",
+      "target_lang": "fr",
+      "tokens": [
+        "good",
+        "displayed",
+        "i",
+        "might",
+        "consider",
+        "new",
+        "sentences",
+        "of",
+        "it",
+        "starts",
+        "with",
+        "topic",
+        "and",
+        "or."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:11:34.951589",
+      "original": "are capitalized and short.",
+      "source_lang": "en",
+      "translated": "sont capitalis\u00e9es et courtes.",
+      "target_lang": "fr",
+      "tokens": [
+        "are",
+        "capitalized",
+        "and",
+        "short."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:11:56.517254",
+      "original": "Do you think I'll be able to do this by today morning or it needs to be done on-",
+      "source_lang": "en",
+      "translated": "Pensez-vous que je pourrai le faire d'ici aujourd'hui matin ou que \u00e7a doit \u00eatre fait sur...",
+      "target_lang": "fr",
+      "tokens": [
+        "do",
+        "you",
+        "think",
+        "i'll",
+        "be",
+        "able",
+        "to",
+        "do",
+        "this",
+        "by",
+        "today",
+        "morning",
+        "or",
+        "it",
+        "needs",
+        "to",
+        "be",
+        "done",
+        "on-"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:17:41.747846",
+      "original": "Hello, I have some problems with the model you made and I need some fixes. I need to fix the incomplete sentences.",
+      "source_lang": "en",
+      "translated": "Bonjour, j'ai quelques probl\u00e8mes avec le mod\u00e8le que vous avez fait et j'ai besoin de corrections. Je dois corriger les phrases incompl\u00e8tes.",
+      "target_lang": "fr",
+      "tokens": [
+        "hello,",
+        "i",
+        "have",
+        "some",
+        "problems",
+        "with",
+        "the",
+        "model",
+        "you",
+        "made",
+        "and",
+        "i",
+        "need",
+        "some",
+        "fixes.",
+        "i",
+        "need",
+        "to",
+        "fix",
+        "the",
+        "incomplete",
+        "sentences."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:17:45.700649",
+      "original": "We can't know the start and the end. We might need to use some text. You can see the new sentences.",
+      "source_lang": "en",
+      "translated": "On ne peut pas conna\u00eetre le d\u00e9but et la fin, il faut peut-\u00eatre utiliser du texte, on peut voir les nouvelles phrases.",
+      "target_lang": "fr",
+      "tokens": [
+        "we",
+        "can't",
+        "know",
+        "the",
+        "start",
+        "and",
+        "the",
+        "end.",
+        "we",
+        "might",
+        "need",
+        "to",
+        "use",
+        "some",
+        "text.",
+        "you",
+        "can",
+        "see",
+        "the",
+        "new",
+        "sentences."
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:17:50.824284",
+      "original": "with a topical word or is capitalized and a short",
+      "source_lang": "en",
+      "translated": "avec un mot d'actualit\u00e9 ou est capitalis\u00e9 et un court",
+      "target_lang": "fr",
+      "tokens": [
+        "with",
+        "a",
+        "topical",
+        "word",
+        "or",
+        "is",
+        "capitalized",
+        "and",
+        "a",
+        "short"
+      ]
+    },
+    {
+      "timestamp": "2025-05-30T13:18:18.962105",
+      "original": "You're doing pretty good for a bad model. We might avoid translating the same complete text within 10 seconds.",
+      "source_lang": "en",
+      "translated": "On pourrait \u00e9viter de traduire le m\u00eame texte complet en 10 secondes.",
+      "target_lang": "fr",
+      "tokens": [
+        "you're",
+        "doing",
+        "pretty",
+        "good",
+        "for",
+        "a",
+        "bad",
+        "model.",
+        "we",
+        "might",
+        "avoid",
+        "translating",
+        "the",
+        "same",
+        "complete",
+        "text",
+        "within",
+        "10",
+        "seconds."
+      ]
     }
   ],
-  "topics": [],
+  "topics": [
+    "fixes",
+    "sentences problems",
+    "cleaned text",
+    "id\u00e9e centrale",
+    "cleaned text remains",
+    "fix this issue",
+    "chosen",
+    "parade",
+    "sister",
+    "problem",
+    "text",
+    "remove exact duplicate",
+    "les autres programmes",
+    "fix incomplete sentences",
+    "model you made",
+    "exact duplicate",
+    "wait",
+    "incomplete sentences problems",
+    "fix",
+    "j'ai",
+    "programme qui bloque",
+    "term",
+    "repeat it upwards",
+    "m\u00eame id\u00e9e centrale",
+    "tous les autres",
+    "model",
+    "qui bloque tous",
+    "j'ai un probl\u00e8me",
+    "problems",
+    "duplicate phrases",
+    "fix incomplete",
+    "machine aujourd'hui",
+    "yes",
+    "multiple days",
+    "exact duplicate phrases",
+    "bloque tous les",
+    "minute",
+    "machine",
+    "today",
+    "collected",
+    "trouble",
+    "like",
+    "Bonjour",
+    "incomplete sentences"
+  ],
   "language_pairs": {
-    "en->fr": 56,
-    "en->es": 7
+    "en->fr": 137,
+    "en->es": 15,
+    "fr->es": 15
   }
 }

@@ -1,13 +1,16 @@
 from flask import Flask, render_template, jsonify, request
-from translation.translator import Translator
+from translation.translator2 import Translator
 from stt.whisper_transcriber import WhisperTranscriber
-from stt.audio_recorder import AudioRecorder
+from stt.audio_silero_copy import AudioRecorder
 from tts.synthesizer import KokoroSynthesizer
 from chatbot.voice_chatbot import VoiceChatbot
 from language_detection.detector import LanguageDetector
 from utils.config import Languages, AudioConfig
+from mcp.mcp2 import ConversationContext, ContextAwareTranslator
+
 import threading
 import queue
+import asyncio
 import time
 
 app = Flask(__name__)
@@ -19,18 +22,36 @@ class TrilingualTranslator:
         self.audio_config = AudioConfig()
         self.paused_event = threading.Event()  # When set => running, when cleared => paused
         self.paused_event.set()  # Initially not paused (running)
+
+        # Queues for audio data: async and sync bridge
+        self.audio_queue = asyncio.Queue(maxsize=10)        # async queue for AudioRecorder
+        self.audio_queue_sync = queue.Queue(maxsize=10)     # sync queue for transcription worker
+
+        # Event loop for async audio recorder
+        self.loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self.loop)
+
         # Core components
-        self.audio_recorder = AudioRecorder(self.audio_config)
+        self.audio_recorder = AudioRecorder(self.audio_config, self.audio_queue, self.loop)
         self.transcriber = WhisperTranscriber()
         self.language_detector = LanguageDetector(self.languages)
-        self.translator = Translator(self.languages, target_lang)
-        self.synthesizer = KokoroSynthesizer(
-            self.languages[target_lang]["kokoro_code"],
-            self.languages[target_lang]["tts_voice"]
-        )
+        self.translators = {
+            lang_code: Translator(self.languages, lang_code)
+            for lang_code in self.languages
+        }
+        self.translator = self.translators[target_lang]        
+
+        # Preload all synthesizers at startup
+        self.synthesizers = {
+            lang_code: KokoroSynthesizer(
+                self.languages[lang_code]["kokoro_code"],
+                self.languages[lang_code]["tts_voice"]
+            )
+            for lang_code in self.languages
+        }
+        self.synthesizer = self.synthesizers[target_lang]
         
-        # Queues for inter-thread communication
-        self.audio_queue = queue.Queue(maxsize=10)
+        # Translation and transcription queues
         self.transcription_queue = queue.Queue(maxsize=10)
         self.translation_queue = queue.Queue(maxsize=5)
         
@@ -47,16 +68,36 @@ class TrilingualTranslator:
         # Thread management
         self.threads = []
 
+    def _start_audio_recorder(self):
+        def run():
+            self.loop.run_until_complete(self.audio_recorder.start())
+        threading.Thread(target=run, daemon=True).start()
+
+    def _async_to_sync_audio_queue(self):
+        async def bridge():
+            while self.running:
+                audio_chunk = await self.audio_queue.get()
+                try:
+                    self.audio_queue_sync.put(audio_chunk, timeout=1)
+                except queue.Full:
+                    pass
+                self.audio_queue.task_done()
+        self.loop.create_task(bridge())
+
     def start(self):
         """Start the translation pipeline."""
         if self.running:
             return False
             
         self.running = True
-        
-        # Create and start worker threads
+
+        # Start audio recorder async loop in thread
+        self._start_audio_recorder()
+        # Start bridging async queue to sync queue
+        self._async_to_sync_audio_queue()
+
+        # Create and start worker threads (no _audio_worker thread anymore)
         self.threads = [
-            threading.Thread(target=self._audio_worker, daemon=True),
             threading.Thread(target=self._transcription_worker, daemon=True),
             threading.Thread(target=self._translation_worker, daemon=True)
         ]
@@ -65,11 +106,16 @@ class TrilingualTranslator:
             thread.start()
         
         return True
-
+    
     def stop(self):
         """Stop the translation pipeline."""
         self.running = False
         self.audio_recorder.stop()
+        # Stop asyncio loop safely
+        try:
+            self.loop.call_soon_threadsafe(self.loop.stop)
+        except Exception:
+            pass
         
         for thread in self.threads:
             if thread.is_alive():
@@ -77,38 +123,33 @@ class TrilingualTranslator:
         
         self._clear_queues()
 
+    def update_target_language(self, new_lang):
+        self.translator = self.translators[new_lang]
+        self.synthesizer = self.synthesizers[new_lang]
+
     def change_language(self, new_lang):
-        """Change target language."""
         if new_lang not in self.languages or new_lang == self.target_lang:
             return False
-            
+
         self.target_lang = new_lang
-        self.translator.update_target_language(new_lang)
-        self.synthesizer.update_language(
-            self.languages[new_lang]["kokoro_code"],
-            self.languages[new_lang]["tts_voice"]
-        )
+        self.update_target_language(new_lang)  # update translator & synthesizer references
         return True
 
     def _clear_queues(self):
         """Clear all processing queues."""
-        for q in [self.audio_queue, self.transcription_queue, self.translation_queue]:
+        for q in [self.audio_queue_sync, self.transcription_queue, self.translation_queue]:
             while not q.empty():
                 try:
                     q.get_nowait()
                 except queue.Empty:
                     break
 
-    def _audio_worker(self):
-        """Audio recording thread."""
-        self.audio_recorder.start(self.audio_queue, lambda: self.running)
-
     def _transcription_worker(self):
         """Speech-to-text processing thread."""
         while self.running:
             self.paused_event.wait()
             try:
-                audio_data = self.audio_queue.get(timeout=0.5)
+                audio_data = self.audio_queue_sync.get(timeout=0.5)
                 
                 # Transcribe audio
                 text, detected_lang = self.transcriber.transcribe(audio_data)
@@ -119,7 +160,7 @@ class TrilingualTranslator:
                         self.last_transcription = text
                         self.transcription_queue.put((text, detected_lang))
                 
-                self.audio_queue.task_done()
+                self.audio_queue_sync.task_done()
             except queue.Empty:
                 continue
 
@@ -178,6 +219,7 @@ class TrilingualTranslator:
 # Initialize translator instance
 translator = TrilingualTranslator()
 translator_lock = threading.Lock()
+
 # Initialize chatbot instance
 chatbot = VoiceChatbot()
 chatbot_lock = threading.Lock()
@@ -263,11 +305,11 @@ def get_status():
         return jsonify(translator.get_status())
 
 @app.route('/change_language', methods=['POST'])
-def change_language():
+def changelanguage():
     new_lang = request.json.get('language')
     if not new_lang or new_lang not in translator.languages:
         return jsonify({'error': 'Invalid language'}), 400
-    
+
     with translator_lock:
         if translator.change_language(new_lang):
             return jsonify({

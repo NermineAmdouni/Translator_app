@@ -75,3 +75,4 @@ __pydantic_cache__/
 
 # Local .env files
 .env
+bfg.jar

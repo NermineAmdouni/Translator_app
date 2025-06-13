@@ -51,8 +51,8 @@ class WhisperTranscriber:
             start = time.time()
             segments, info = self.model.transcribe(
                 audio_np,
-                beam_size=8,
-                best_of=2,
+                beam_size=5,
+                best_of=5,
                 patience=0.1,
                 length_penalty=1.0,
                 temperature=0.0,

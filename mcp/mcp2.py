@@ -12,7 +12,7 @@ class ConversationContext:
     or any conversation-based system.
     """
 
-    def __init__(self, max_history: int = 100, context_window_minutes: int = 60, save_path: str = None):
+    def __init__(self, max_history: int = 100, context_window_minutes: int = 60, save_path: str = None, yake_max_keywords=5): 
         """
         Initialize the conversation context manager.
 
@@ -30,6 +30,8 @@ class ConversationContext:
         self.save_path = save_path
         if save_path and os.path.exists(save_path):
             self.load_history(save_path)
+        self.yake_max_keywords = yake_max_keywords
+        self.yake_extractor = yake.KeywordExtractor(top=self.yake_max_keywords, stopwords=None)
 
     def add_exchange(self, original_text: str, source_lang: str,
                      translated_text: str, target_lang: str):
@@ -63,7 +65,8 @@ class ConversationContext:
         # Perform topic extraction when buffer hits 50+ words
         buffered_text = " ".join(self._topic_buffer)
         if len(buffered_text.split()) >= 50:
-            extracted_topics = self.extract_topics(buffered_text)
+            #extracted_topics = self.extract_topics(buffered_text)
+            extracted_topics = self.extract_topics_yake(buffered_text)
             self.topics.update(extracted_topics)
 
             # Limit topics to last 50 if more than 100 (avoid overgrowth)
@@ -71,7 +74,21 @@ class ConversationContext:
                 self.topics = set(list(self.topics)[-50:])
 
             self._topic_buffer = []
+    def extract_topics_yake(self, text: str) -> List[str]:
+        """
+        Use YAKE keyword extractor to extract important keywords from text.
 
+        Args:
+            text: Input text.
+
+        Returns:
+            List of extracted keywords.
+        """
+        keywords_with_scores = self.yake_extractor.extract_keywords(text)
+        # Just return keywords, ignoring scores for topics
+        keywords = [kw for kw, score in keywords_with_scores]
+        return keywords
+    
     def extract_topics(self, text: str) -> List[str]:
         """
         Extract keywords based on word frequency, length, capitalization, and filtering stopwords.
@@ -239,53 +256,199 @@ class ConversationContext:
             'context_window_minutes': int(self.context_window.total_seconds() / 60)
         }
 
+from typing import Dict, Optional
+import time
+
 class ContextAwareTranslator:
-    """Enhanced translator that uses conversation context for better translations."""
+    """
+    Context-aware translator that wraps the base Translator class
+    and adds conversation context management.
+    """
     
-    def __init__(self, base_translator, languages: Dict, target_lang: str):
+    def __init__(self, base_translator, languages: Dict, target_lang: str,context_manager: ConversationContext):
         """
-        Initialize context-aware translator.
+        Initialize the context-aware translator.
         
         Args:
-            base_translator: The base translator instance
+            base_translator: Instance of the base Translator class
             languages: Dictionary of supported languages
-            target_lang: Current target language code
+            target_lang: Target language code
         """
         self.base_translator = base_translator
         self.languages = languages
         self.target_lang = target_lang
         
-    def translate_with_context(self, text: str, source_lang: str, context: str = "") -> str:
+        # Context management
+        self.conversation_topics = set()
+        self.recent_translations = {}
+        self.translation_patterns = {}
+        self.partial_sentence = ""
+        self.context_manager = context_manager
+
+
+    def is_likely_start_of_new_sentence(self, text: str) -> bool:
+        """Heuristic to detect the start of a new sentence based on topics and structure."""
+        words = text.strip().split()
+        if not words:
+            return False
+        topics = self.context_manager.get_top_topics()
+        # Consider it a new sentence if it starts with a topic word or is capitalized and short
+        return words[0][0].isupper() or any(topic in text.lower() for topic in topics)
+
+    def is_likely_incomplete_sentence(self, text: str) -> bool:
+        """Heuristic based on context, length, and non-terminal words."""
+        if len(text.strip().split()) < 3:
+            return True
+
+        non_terminal_endings = {"and", "but", "so", "because", "although", "if", "when", "which"}
+        last_word = text.strip().split()[-1].lower()
+        if last_word in non_terminal_endings:
+            return True
+
+        topics = self.context_manager.get_top_topics()
+        if topics and not any(topic in text.lower() for topic in topics):
+            return True
+
+        return False
+
+    def is_complete_sentence(self, text: str) -> bool:
+        """Combines base translator’s check with context-aware heuristics."""
+        base_check = self.base_translator.is_complete_sentence(text)
+        context_check = not self.is_likely_incomplete_sentence(text)
+        return base_check and context_check    
+    
+    #def is_complete_sentence(self, text: str, current_text: str = None) -> bool:
+ 
+     #   return self.base_translator.is_complete_sentence(text)
+    
+    def translate(self, text: str, source_lang: str) -> Optional[str]:
+        if not text or source_lang == self.target_lang:
+            return None
+
+        self.partial_sentence += " " + text.strip()
+        self.partial_sentence = self.partial_sentence.strip()
+
+        text_key = f"{source_lang}:{self.partial_sentence.lower()}"
+        current_time = time.time()
+
+        # Skip recently translated duplicates
+        if text_key in self.recent_translations and current_time - self.recent_translations[text_key] < 10:
+            return None
+
+        # Not complete yet
+        if not self.is_complete_sentence(self.partial_sentence):
+            return None
+
+        translation = self.base_translator.translate(self.partial_sentence, source_lang, self.target_lang)
+        if translation:
+            self.recent_translations[text_key] = current_time
+            self.context_manager.add_exchange(
+                original_text=self.partial_sentence,
+                source_lang=source_lang,
+                translated_text=translation,
+                target_lang=self.target_lang
+            )
+            self.partial_sentence = ""  # Clear after successful translation
+            return translation
+
+        return None
+    
+    def _update_translation_patterns(self, source_lang: str, original: str, translation: str):
         """
-        Translate text using conversation context.
+        Update translation patterns for context awareness.
         
         Args:
-            text: Text to translate
             source_lang: Source language code
-            context: Conversation context string
-            
-        Returns:
-            str: Translated text
+            original: Original text
+            translation: Translated text
         """
-        if not context:
-            return self.base_translator.translate(text, source_lang)
+        # Extract potential topics/keywords
+        words = original.lower().split()
+        significant_words = [w for w in words if len(w) > 3]
         
-        # Enhanced translation with context
-        # For now, we'll use the base translator but could integrate with
-        # more sophisticated models that accept context
-        
-        # Simple context-aware translation approach:
-        # 1. Use base translation
-        base_translation = self.base_translator.translate(text, source_lang)
-        
-        # 2. Could add context refinement logic here
-        # For example, checking for consistency with previous translations
-        # or using the context to disambiguate meanings
-        
-        return base_translation
+        for word in significant_words[:3]:  # Keep top 3 significant words
+            self.conversation_topics.add(word)
+            
+        # Limit topic set size
+        if len(self.conversation_topics) > 100:
+            # Remove oldest topics (simplified approach)
+            self.conversation_topics = set(list(self.conversation_topics)[-80:])
     
-    def update_target_language(self, new_target: str):
-        """Update target language."""
+    """def update_target_language(self, new_target: str):
+
         self.target_lang = new_target
         self.base_translator.update_target_language(new_target)
+        
+        # Clear context when changing language
+        self.recent_translations.clear()
+        self.conversation_topics.clear()
+        self.translation_patterns.clear()"""
+    
+    def clear_context(self, source_lang: Optional[str] = None):
+        """
+        Clear translation context.
+        
+        Args:
+            source_lang: Specific source language to clear, or None for all
+        """
+        if source_lang:
+            # Clear context for specific language
+            keys_to_remove = [k for k in self.recent_translations.keys() 
+                            if k.startswith(f"{source_lang}:")]
+            for key in keys_to_remove:
+                del self.recent_translations[key]
+        else:
+            # Clear all context
+            self.recent_translations.clear()
+            self.conversation_topics.clear()
+            self.translation_patterns.clear()
+        
+        # Also clear base translator context
+        self.base_translator.clear_context(source_lang)
+    
+    def get_performance_stats(self) -> Dict:
+        """
+        Get performance statistics from base translator.
+        
+        Returns:
+            Dictionary with performance metrics
+        """
+        base_stats = self.base_translator.get_performance_stats()
+        
+        # Add context-aware stats
+        context_stats = {
+            "recent_translations_count": len(self.recent_translations),
+            "conversation_topics_count": len(self.conversation_topics),
+            "current_topics": list(self.conversation_topics)[-10:] if self.conversation_topics else []
+        }
+        
+        return {**base_stats, **context_stats}
+    
+    def get_conversation_context(self) -> Dict:
+        """
+        Get current conversation context information.
+        
+        Returns:
+            Dictionary with context information
+        """
+        return {
+            "target_language": self.target_lang,
+            "active_topics": list(self.conversation_topics)[-20:],
+            "recent_translation_count": len(self.recent_translations),
+            "supported_languages": list(self.languages.keys())
+        }
 
+    def reset_context(self):
+        self.context_manager.context = []
+        self.context_manager.topics = []
+        self.partial_sentence = ""
+
+
+    # Delegate any other methods that might be called
+    def __getattr__(self, name):
+        """
+        Delegate any missing method calls to the base translator.
+        """
+        if hasattr(self.base_translator, name):
+            return getattr(self.base_translator, name)
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")

@@ -9,7 +9,8 @@ class AudioConfig:
         self.CHUNK_DURATION_MS = 30
         self.CHUNK_SIZE = int(self.RATE * self.CHUNK_DURATION_MS / 1000)
         self.VAD_AGGRESSIVENESS = 2
-        
+        self.vad_threshold = 0.5
+        self.vad_enabled = True
         # Additional configuration
         self.MIN_AUDIO_CHUNKS = 15
         self.MAX_AUDIO_CHUNKS = 200

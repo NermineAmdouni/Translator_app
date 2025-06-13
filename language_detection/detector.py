@@ -3,9 +3,10 @@ import re
 
 class LanguageDetector:
     """Detects language of text and identifies complete sentences."""
+    
     def __init__(self, languages):
         self.languages = languages
-        # Mapping from langdetect codes to our language codes
+        self.last_detected_lang = "en"  # Default fallback
         self.lang_map = {
             "en": "en",
             "es": "es",
@@ -13,17 +14,19 @@ class LanguageDetector:
         }
     
     def detect(self, text):
-        """Detect the language of the text."""
+        """Detect the language of the text, fallback to last valid detection."""
         if not text:
-            return None
-            
+            return self.last_detected_lang
+        
         try:
             detected = detect(text)
             if detected in self.lang_map and self.lang_map[detected] in self.languages:
-                return self.lang_map[detected]
-            return None
+                self.last_detected_lang = self.lang_map[detected]  # update memory
+                return self.last_detected_lang
+            # Language not in supported set — fallback to last
+            return self.last_detected_lang
         except LangDetectException:
-            return None
+            return self.last_detected_lang
     
     def is_complete_sentence(self, text, source_lang=None):
         """Check if text forms a complete sentence."""
@@ -38,11 +41,9 @@ class LanguageDetector:
         if not words:
             return False
         
-        # If source language is not yet detected, we can't check connectors
         if not source_lang:
             return len(words) > 8
             
-        # Common connectors that might indicate an incomplete sentence
         connectors = {
             "en": ["and", "but", "or", "because", "although", "while"],
             "es": ["y", "pero", "o", "porque", "aunque", "mientras"],
@@ -53,7 +54,4 @@ class LanguageDetector:
         if last_word in connectors.get(source_lang, []):
             return False
             
-        if len(words) > 8:
-            return True
-            
-        return False
+        return len(words) > 8

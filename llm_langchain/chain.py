@@ -9,3 +9,9 @@ def create_chain(prompt_template: PromptTemplate):
 def get_cleaning_chain():
     return create_chain(cleaning_prompt)
 
+def safe_clean_text(text: str) -> str:
+    if not text.strip():
+        return ""
+    
+    chain = get_cleaning_chain()
+    return chain.invoke({"text": text})

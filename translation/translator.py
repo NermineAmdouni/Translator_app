@@ -83,8 +83,8 @@ class Translator:
             )[0]
             
             # Update conversation history with new exchange
-            if self.is_complete_sentence(text):
-                self.mcp.add_exchange(text, translated)
+            #if self.is_complete_sentence(text):
+             #   self.mcp.add_exchange(text, translated)
                 
             return translated
                 

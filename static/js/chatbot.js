@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // 🚨 ONLY RUN ON CHATBOT PAGE
     const startBtn = document.getElementById('startChatbotBtn');
+    if (!startBtn) {
+        console.log('Not on chatbot page, skipping chatbot JS');
+        return; // Exit if not on chatbot page
+    }
+    
     const stopBtn = document.getElementById('stopChatbotBtn');
     const statusAlert = document.getElementById('chatbotStatusAlert');
     const chatHistory = document.getElementById('chatHistory');
@@ -64,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Change language
     languageSelect.addEventListener('change', async function() {
+        console.log('🔄 CHATBOT Language selection changed to:', this.value);
+        
         if (isChatting) {
             try {
                 const response = await fetch('/change_chatbot_language', {
@@ -76,14 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                 });
                 
+                console.log('📡 CHATBOT Response status:', response.status);
                 const data = await response.json();
+                console.log('✅ CHATBOT Change language response:', data);
                 
                 if (data.status !== 'language_changed') {
                     // Revert selection if change failed
                     languageSelect.value = data.previous_language || 'en';
                 }
             } catch (error) {
-                console.error('Error changing language:', error);
+                console.error('❌ CHATBOT Error changing language:', error);
             }
         }
     });
